@@ -14,21 +14,22 @@ So, here is the workflow that I used successfully with AutoML. Your mileage may 
 1. Find where in your code where the fit method is called.  
    Example: 
    
-...
+```
             grid_model = GridSearchCV(model, param_grid = params, scoring=scorer,
                         n_jobs=4,iid=False, cv=5 ,return_train_score=True)
             grid_model.fit(X_train,y_train) 
             
-...
+```
+
 2. Find or reassemble the test and training data into a single table and export to a simple CSV file. This data contains only the columns that you wanted to use as features for your model.  All the data clearing and absent value processing that you needed is already part of this table.
 
 Your new snippet in your notebook will look something like:
 
-...
+```
 import numpy as np
 output_dir3 = '.\\..\\data\\'
 np.savetxt(output_dir3 + r'combined_data3.csv', xy_combined, delimiter=",")
-...
+```
 
 where xy_combined was your combined training and test tables.
 
