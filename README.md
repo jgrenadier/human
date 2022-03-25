@@ -15,9 +15,9 @@ So, here is the workflow that I used successfully with AutoML. Your mileage may 
    Example: 
    
 ```
-            grid_model = GridSearchCV(model, param_grid = params, scoring=scorer,
+grid_model = GridSearchCV(model, param_grid = params, scoring=scorer,
                         n_jobs=4,iid=False, cv=5 ,return_train_score=True)
-            grid_model.fit(X_train,y_train) 
+grid_model.fit(X_train,y_train) 
             
 ```
 
